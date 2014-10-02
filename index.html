@@ -3,41 +3,52 @@
 <head>
 	<title>ParseQ</title>
 	<link rel="stylesheet" href="main.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body ng-controller="mainController">
 
 <header>
-Get Help:
+<i class="fa fa-question fa-2x"></i>
 <input type="text" placeholder="How can I help you?" ng-model="studentQuestion"> <!-- This question is defined scope in the controller--> 
 <button ng-click="postQuestion()">Submit Your Question</button>
 
 </header>
 
 <!-- Waiting for Help Box -->
-<div class="q-container help">
+<div class="float1">	
+	<div class="q-container help">
 
-<div>	
-	<h4>Waiting for Help</h4>
-</div>
-<div ng-repeat="question in questions | filter: question.status='red'">
-{{question.content}} <button ng-click="changeStatus(question)">Assist</button>
-</div>
-</div>
+		<div>	
+			<h4>Waiting for Help</h4>
+		</div>
 
+	</div>
 
-<!-- Getting Helped Box -->
-<div class="q-container assisting">
-<div>
-	<h4>Getting Helped</h4>
-</div>
-
-<p ng-repeat="question in questions |filter: question.status='yellow'">
-{{question.content}} <button ng-click="deleteQuestion(question)">Done Helping</button>
-</p>
+	<li class="q-container help" ng-repeat="question in questions | filter: question.status='red'">
+		 
+		<button ng-click="changeStatus(question)">Assist <i class="fa fa-check-square-o"></i></button>
+		{{question.content}}
+	</li>
+	
 </div>
 
 
+<div class="float2"
+	<!-- Getting Helped Box -->
+	<div class="q-container assisting">
+		<div>
+			<h4>Getting Helped</h4>
+		</div>
+	</div>
+
+	<li class="q-container assisting" ng-repeat="question in questions |filter: question.status='yellow'">
+		
+		{{question.content}}
+		<button ng-click="deleteQuestion(question)">Done<i class="fa fa-trash"></i></button>
+		 
+	</li>
+</div>
 <!-- sources -->
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>

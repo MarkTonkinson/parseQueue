@@ -15,7 +15,7 @@ app.controller('mainController', function($scope, parseService){
 	
 
 	$scope.postQuestion = function(){
-		if($scope.studentQuestion === null){  //this won't work to stop it from taking empty text
+		if(!$scope.studentQuestion){  
 			alert("You forgot to ask a question.");
 		} else {
 		parseService.postParseData($scope.studentQuestion)

@@ -1,47 +1,119 @@
 body {
 	margin:0;
-	background-color: rgba(20,150,200,1);
 	font-family: georgia;
+	background-color: rgba(70,95,166,1);
+	
+ 	background: -webkit-linear-gradient(top left, rgba(70,95,166,1) 30%, rgba(45,70,141,1) 70%);
+	
 }
 
 input {
 	height: 25px;
 	padding:0;
+	padding-left:3px;
+	overflow: hidden;
+	width:200px;
+	transition: width 1s ease-in-out;
+	box-shadow: 2px 2px 2px gray;
 }
+
+input:hover {
+	width:250px;
+}
+input:focus {
+	width: 300px;
+}
+
 button {
 	height: 25px;
 	padding: 5px;
-	background-color: rgba(10,10,83,1);
+	background-color: black;
 	border: .1px solid black;
 	color:white;
-
+	box-shadow: 2px 2px 2px gray;
+}
+button:hover {
+	height:27px;
+	cursor: pointer;
 }
 
 header {
-	background-color: rgba(255,255,255, 1);
+	background-color: rgba(255,255,255,1);
 	width: 100%;
 	height:50px;
 	padding-top:10px;
+	margin-bottom: 10px;
+	color:black;
+	border-bottom: 1px solid black;
+
 }
+header > .fa {
+	color: black;
+	margin-left:15px; 
+
+}
+
+.float1 {
+	float: left;
+}
+
+.float2 {
+	float: right;
+}
+
+
+
 
 .q-container {
-	text-align: center;
-	display:inline-block;
+	width:400px;
 	border: 1px solid black;
-	width:45%;
-	height: 500px;
-	overflow: scroll;
 	margin-right: 20px;
 	margin-left: 20px;
-	margin-top: 10px;
+	box-shadow: 1px 1px 1px black;
+	background-color: rgba(238,115,0,1);
+
+}
+.q-container > div {
+	text-align: center;
+} 
+
+li {
+	text-align: left;
+	list-style: none;
+	height:20px;
+	padding: 10px 0 10px 0;
+	margin:3px;
+	border: 0;
 
 }
 
-.help {
-	background-color: rgba(200,100,50,1);
+li > button {
+	background: rgb(100, 100, 100);
+	border:1px solid white;
+	margin-left: 10px;
+}
+li > button:hover {
+	border:1px solid black;
+	height:25px;
 
+	
 }
 
+.fa {
+	color:white;
+}
+
+/*.help {
+	background-color: rgba(200,170,50,1);
+
+}
+*/
 .assisting {
-	background-color: rgba(155,55,25,1);
+	text-align: right;	
 }
+.assisting > button {
+	margin-right: 10px;
+}
+
+
+
